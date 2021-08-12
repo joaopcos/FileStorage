@@ -37,6 +37,18 @@ td{
     display: flex;
     align-items: center;
 }
+#loading-ajax{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    background-image: url('../images/loading-ajax.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .divider{
     width: 100%;
     border-bottom: 1px solid #c7c7c7;

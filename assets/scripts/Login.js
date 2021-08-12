@@ -1,3 +1,9 @@
+$('#loading-ajax').ajaxStart(function() {
+    $(this).show();
+}).ajaxComplete(function() {
+    $(this).hide();
+});
+
 $('#login').submit(function(e){
     e.preventDefault();
 
@@ -6,10 +12,12 @@ $('#login').submit(function(e){
 
     console.log(authUser, authPassword);
     $.ajax({
-        url: 'authentication.php',
+        url: 'authentication.php?function=login',
         method: 'POST',
         data: {User: authUser, Password: authPassword},
         dataType: 'json',
+        beforeSend: function() { $('#loading-ajax').show(); },
+        complete: function() { $('#loading-ajax').hide(); },
         success: function(data){
             switch (data.status){
                 case 'empty_fields':
