@@ -12,7 +12,7 @@ $dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
 <html>
 <head>
     <title>File storage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         h2{
             margin: 0;
@@ -89,7 +89,7 @@ $dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
             </div>
         </div>
     </div>
-    <script src="scripts/jquery-3.6.0.min.js"></script>
-    <script src="scripts/Modal.js"></script>
+    <script src="assets/scripts/jquery-3.6.0.min.js"></script>
+    <script src="assets/scripts/Modal.js"></script>
 </body>
 </html>

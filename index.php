@@ -8,7 +8,7 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <head>
     <title>Log in</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         body{
             margin: 0;
@@ -73,7 +73,7 @@ if(isset($_SESSION['user'])){
             </div>
         </div>
     </div>
-    <script src="scripts/jquery-3.6.0.min.js"></script>
-    <script src="scripts/Login.js"></script>
+    <script src="assets/scripts/jquery-3.6.0.min.js"></script>
+    <script src="assets/scripts/Login.js"></script>
 </body>
 </html>
