@@ -1,9 +1,9 @@
 var modal = $('.modal')[0];
 
 function modalShow(){
-    modal.addClass('toggled');
+    modal.classList.add('toggled');
 }
 
 function modalClose(){
-    modal.addClass('toggled');
+    modal.classList.remove('toggled');
 }

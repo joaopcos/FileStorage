@@ -51,15 +51,26 @@ td{
 .btn{
     padding: 10px;
     font-size: 16px;
-    background-color: #3a993a;
-    border: 1px solid #328332;
     border-radius: .225rem;
     color: white;
+    text-decoration: none;
     cursor: pointer;
 }
-.btn:hover{
+.btn.success{
+    background-color: #3a993a;
+    border: 1px solid #328332;
+}
+.btn.success:hover{
     background-color: #328332;
     border: 1px solid #307a30;
+}
+.btn.error{
+    background-color: #c52626;
+    border: 1px solid #a71c1c;
+}
+.btn.error:hover{
+    background-color: #b61f1f;
+    border: 1px solid #9e1919;
 }
 .modal{
     width: 100vw;

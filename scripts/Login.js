@@ -9,10 +9,18 @@ $('#login').submit(function(e){
         url: 'authentication.php',
         method: 'POST',
         data: {User: authUser, Password: authPassword},
-        dataType: 'json'
-    }).done(function(result){
-        console.log(result);
-
-        $('#alert-content').html(result);
-    });
-})
+        dataType: 'json',
+        success: function(data){
+            switch (data.status){
+                case 'empty_fields':
+                    $('#alert-content').html('<p>You must fill all the fields!</p>');
+                    break;
+                case 'user_or_password_incorrect':
+                    $('#alert-content').html('<p>User or password is incorrect!</p>');
+                    break;
+                case 'success':
+                    window.location = "dashboard.php";
+            }
+        }
+    })
+});

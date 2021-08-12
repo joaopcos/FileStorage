@@ -68,7 +68,7 @@ if(isset($_SESSION['user'])){
                 <form id="login">
                     <input type="text" name="user" id="user" class="form" placeholder="User">
                     <input type="password" name="password" id="password" class="form"  placeholder="Password">
-                    <input type="submit" class="btn">
+                    <input type="submit" class="btn success">
                 </form>
             </div>
         </div>

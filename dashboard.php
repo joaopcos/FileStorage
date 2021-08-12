@@ -44,7 +44,10 @@ $dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
         <div id="main">
             <div id="main-header">
                 <h2>Files:</h2>
-                <button class="btn" onclick="modalShow()">+ Add file</button>
+                <div>
+                    <a href="logout.php" class="btn error">Log out</a>
+                    <button class="btn success" onclick="modalShow()">+ Add file</button>
+                </div>
             </div>
             <i class="divider"></i>
             <div id="files">
