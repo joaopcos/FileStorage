@@ -1,13 +1,10 @@
 <?php
-session_cache_limiter('private_no_expire');
 session_start();
 
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['User'])){
     header('Location: index.php');
     exit();
 }
-
-$dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
 ?>
 <html>
 <head>
@@ -82,8 +79,9 @@ $dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
                 </div>
                 <i class="divider"></i>
                 <div class="modal-body">
-                    <form>
-                        <input type="file" name=archive" id="archive">
+                    <form action="upload.php" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="archive" id="archive">
+                        <input type="submit">
                     </form>
                 </div>
             </div>

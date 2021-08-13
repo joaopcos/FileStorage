@@ -1,11 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-error_reporting(0);
-session_cache_limiter('private_no_expire');
-session_start();
+include_once('config.php');
 
-$dbConnection = mysqli_connect("localhost", "root", "", "file_storage");
+error_reporting(0);
+session_start();
 
 switch($_GET['function']){
     case 'login':
@@ -23,7 +22,7 @@ switch($_GET['function']){
             echo json_encode ($responseArray);
             exit();
         }else{
-            $_SESSION['user'] = $User;
+            $_SESSION['User'] = $User;
             $responseArray['status'] = 'success';
             echo json_encode ($responseArray);
         }

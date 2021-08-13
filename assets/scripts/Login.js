@@ -1,14 +1,14 @@
-$('#loading-ajax').ajaxStart(function() {
-    $(this).show();
-}).ajaxComplete(function() {
-    $(this).hide();
-});
-
 $('#login').submit(function(e){
     e.preventDefault();
 
     var authUser = $('#user').val();
     var authPassword = $('#password').val();
+
+    $('#loading-ajax').ajaxStart(function() {
+        $(this).show();
+    }).ajaxComplete(function() {
+        $(this).hide();
+    });
 
     console.log(authUser, authPassword);
     $.ajax({
