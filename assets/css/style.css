@@ -48,6 +48,8 @@ td{
     background-image: url('../images/loading-ajax.gif');
     background-repeat: no-repeat;
     background-position: center;
+    color: white;
+    z-index: 2;
 }
 .divider{
     width: 100%;
@@ -111,6 +113,7 @@ td{
 .modal-body{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
 }
 .modal-close{

@@ -11,20 +11,25 @@ switch($_GET['function']){
         $User = mysqli_real_escape_string($dbConnection, trim($_POST['User']));
         $Password = mysqli_real_escape_string($dbConnection, trim(md5($_POST['Password'])));
         $querySelector = "SELECT * FROM users WHERE USER_ID = '$User' AND PASSWORD = '$Password'";
-        $responseArray['status'] = null;
 
         if(empty($User) || empty($Password)){
-            $responseArray['status'] = 'empty_fields';
-            echo json_encode ($responseArray);
+            echo json_encode ([
+                'status' => 'error',
+                'message' => 'You must fill all the fields!'
+            ]);
             exit();
         }elseif(mysqli_num_rows(mysqli_query($dbConnection, $querySelector)) != 1 ){
-            $responseArray['status'] = 'user_or_password_incorrect';
-            echo json_encode ($responseArray);
+            echo json_encode ([
+                'status' => 'error',
+                'message' => 'Incorrect username or password!'
+            ]);
             exit();
         }else{
             $_SESSION['User'] = $User;
-            $responseArray['status'] = 'success';
-            echo json_encode ($responseArray);
+            echo json_encode ([
+                'status' => 'success'
+            ]);
+            
         }
         break;
     case 'logout':

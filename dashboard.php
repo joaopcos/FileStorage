@@ -34,6 +34,23 @@ if(!isset($_SESSION['User'])){
             flex-direction: column;
             overflow: auto;
         }
+        #upload{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #file{
+            margin-right: 10px;
+        }
+        #submit-file{
+            display: block;
+        }
+        #progress{
+            display: none;
+        }
+        #response{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -79,15 +96,25 @@ if(!isset($_SESSION['User'])){
                 </div>
                 <i class="divider"></i>
                 <div class="modal-body">
-                    <form action="upload.php" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="archive" id="archive">
-                        <input type="submit">
+                    <form id="upload" enctype="multipart/form-data">
+                        <input type="file" name="file" id="file">
+                        <input type="submit" id="submit-file">
+                        <div id="progress">
+                            <p style="display: flex; align-items: center;">
+                                <img src="assets/images/loading-ajax.gif" height="24px" style="margin-right: 10px;">
+                                <span id="percentage">0%</span>
+                            </p>
+                        </div>
                     </form>
+                    <div id="response">
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="assets/scripts/jquery-3.6.0.min.js"></script>
     <script src="assets/scripts/Modal.js"></script>
+    <script src="assets/scripts/uploadFile.js"></script>
 </body>
 </html>
