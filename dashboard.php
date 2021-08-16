@@ -51,6 +51,22 @@ if(!isset($_SESSION['User'])){
         #response{
             text-align: center;
         }
+        a.delete {display:inline-block;
+            background: url('assets/images/delete.png') no-repeat scroll 0 2px;
+            color:#d00;
+            margin-left: 15px;
+            font-size: 11px;
+            padding: 0 0 0 13px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        a.download {
+            background: url('assets/images/download.png') no-repeat scroll 0px 5px;
+            padding: 4px 0 4px 20px;
+            font-size: 11px;
+            cursor: pointer;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -59,32 +75,22 @@ if(!isset($_SESSION['User'])){
             <div id="main-header">
                 <h2>Files:</h2>
                 <div>
-                    <a href="authentication.php?function=logout" class="btn error">Log out</a>
+                    <button class="btn error" onclick="window.location = 'authentication.php?function=logout'">Log out</button>
                     <button class="btn success" onclick="modalShow()">+ Add file</button>
                 </div>
             </div>
             <i class="divider"></i>
             <div id="files">
-                <table id="files-list">
-                    <tr>
-                        <th style="width: 50%;">Name</th>
-                        <th style="width: 15%;">Format</th>
-                        <th style="width: 15%;">Size</th>
-                        <th style="width: 20%;">Options</th>
-                    </tr>
-                    <tr>
-                        <td>joaopcos-avatar</td>
-                        <td>.png</td>
-                        <td>
-                            <center>632 kb</center>
-                        </td>
-                        <td>
-                            <center>
-                                <button>Preview</button>
-                                <button>Remove</button>
-                            </center>
-                        </td>
-                    </tr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 65%;">File</th>
+                            <th style="width: 15%;">Size</th>
+                            <th style="width: 20%;">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody id="file-list">
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -106,15 +112,14 @@ if(!isset($_SESSION['User'])){
                             </p>
                         </div>
                     </form>
-                    <div id="response">
-                        
-                    </div>
+                    <div id="response"></div>
                 </div>
             </div>
         </div>
+        <div id="loading-ajax"></div>
     </div>
     <script src="assets/scripts/jquery-3.6.0.min.js"></script>
     <script src="assets/scripts/Modal.js"></script>
-    <script src="assets/scripts/uploadFile.js"></script>
+    <script src="assets/scripts/Files.js"></script>
 </body>
 </html>

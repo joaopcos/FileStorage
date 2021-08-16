@@ -1,5 +1,5 @@
 <?php
-include_once('config.php');
+header('Content-Type: application/json');
 
 function uploadFile(){
     if(isset($_FILES['file'])){
