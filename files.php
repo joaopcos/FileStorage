@@ -1,4 +1,5 @@
 <?php
+error_reporting('0');
 switch($_GET['function']){
     case 'get-files':
         $fileDirectory = "files/";
