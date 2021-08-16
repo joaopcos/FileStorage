@@ -6,7 +6,7 @@ function getFiles(){
         beforeSend: function() { $('#loading-ajax').show(); },
         complete: function() { $('#loading-ajax').hide(); },
         success: function(result){
-            if (result = 'null'){
+            if (result == null){
                 $('#file-list').prepend("There's no file!");
             }else{
                 for (var i = 0; i < result.length; i++) {
