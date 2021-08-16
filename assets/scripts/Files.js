@@ -6,8 +6,12 @@ function getFiles(){
         beforeSend: function() { $('#loading-ajax').show(); },
         complete: function() { $('#loading-ajax').hide(); },
         success: function(result){
-            for (var i = 0; i < result.length; i++) {
-                $('#file-list').prepend('<tr><td>'+result[i].fileName+'</td><td><center>'+result[i].fileSize+' bytes</center></td><td><center><a class="download" href="files/'+result[i].fileName+'" download="'+result[i].fileName+'">download</a><a class="delete" data-fname="'+result[i].fileName+'">delete</a></center></td></tr>');
+            if (result = 'null'){
+                $('#file-list').prepend("There's no file");
+            }else{
+                for (var i = 0; i < result.length; i++) {
+                    $('#file-list').prepend('<tr><td>'+result[i].fileName+'</td><td><center>'+result[i].fileSize+' bytes</center></td><td><center><a class="download" href="files/'+result[i].fileName+'" download="'+result[i].fileName+'">download</a><a class="delete" data-fname="'+result[i].fileName+'">delete</a></center></td></tr>');
+                }
             }
         }
     });
@@ -78,5 +82,3 @@ $("#file-list").on('click', '.delete', function(){
         }
     })
 })
-
-
